@@ -1,12 +1,13 @@
-package pw.pj.POJO.DO;
+package pw.pj.POJO.DTO;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.Date;
-import lombok.Data;
 
 /**
  * 访问日志表
@@ -14,7 +15,7 @@ import lombok.Data;
  */
 @TableName(value ="tb_visit_log")
 @Data
-public class TbVisitLog implements Serializable {
+public class TbVisitLogDTO implements Serializable {
     /**
      * 日志ID
      */
@@ -96,22 +97,5 @@ public class TbVisitLog implements Serializable {
      */
     private String spiderName;
 
-    /**
-     * 创建时间
-     */
-    private Date createTime;
-
-    /**
-     * 更新时间
-     */
-    private Date updateTime;
-
-    /**
-     * 是否删除：0-未删除，1-已删除
-     */
-    private Integer isDelete;
-
-    @TableField(exist = false)
-    private static final long serialVersionUID = 1L;
 
 }

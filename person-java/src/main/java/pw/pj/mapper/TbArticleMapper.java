@@ -1,6 +1,6 @@
 package pw.pj.mapper;
 
-import pw.pj.POJO/DO.TbArticle;
+import pw.pj.POJO.DO.TbArticle;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

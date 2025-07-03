@@ -1,7 +1,7 @@
 package pw.pj.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import pw.pj.POJO/DO.TbArticle;
+import pw.pj.POJO.DO.TbArticle;
 import pw.pj.service.TbArticleService;
 import pw.pj.mapper.TbArticleMapper;
 import org.springframework.stereotype.Service;
