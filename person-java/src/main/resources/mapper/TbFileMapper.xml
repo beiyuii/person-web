@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pw.pj.mapper.TbFileMapper">
+
+    <resultMap id="BaseResultMap" type="pw.pj.POJO.DO.TbFile">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="originalName" column="original_name" jdbcType="VARCHAR"/>
+            <result property="fileName" column="file_name" jdbcType="VARCHAR"/>
+            <result property="filePath" column="file_path" jdbcType="VARCHAR"/>
+            <result property="fileUrl" column="file_url" jdbcType="VARCHAR"/>
+            <result property="fileType" column="file_type" jdbcType="VARCHAR"/>
+            <result property="fileExtension" column="file_extension" jdbcType="VARCHAR"/>
+            <result property="fileSize" column="file_size" jdbcType="BIGINT"/>
+            <result property="mimeType" column="mime_type" jdbcType="VARCHAR"/>
+            <result property="uploadUserId" column="upload_user_id" jdbcType="BIGINT"/>
+            <result property="uploadIp" column="upload_ip" jdbcType="VARCHAR"/>
+            <result property="storageType" column="storage_type" jdbcType="TINYINT"/>
+            <result property="bucketName" column="bucket_name" jdbcType="VARCHAR"/>
+            <result property="isPublic" column="is_public" jdbcType="TINYINT"/>
+            <result property="downloadCount" column="download_count" jdbcType="INTEGER"/>
+            <result property="status" column="status" jdbcType="TINYINT"/>
+            <result property="remark" column="remark" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="isDelete" column="is_delete" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,original_name,file_name,
+        file_path,file_url,file_type,
+        file_extension,file_size,mime_type,
+        upload_user_id,upload_ip,storage_type,
+        bucket_name,is_public,download_count,
+        status,remark,create_time,
+        update_time,is_delete
+    </sql>
+</mapper>

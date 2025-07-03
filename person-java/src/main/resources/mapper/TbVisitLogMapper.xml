@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pw.pj.mapper.TbVisitLogMapper">
+
+    <resultMap id="BaseResultMap" type="pw.pj.POJO.DO.TbVisitLog">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="articleId" column="article_id" jdbcType="BIGINT"/>
+            <result property="visitorIp" column="visitor_ip" jdbcType="VARCHAR"/>
+            <result property="visitorLocation" column="visitor_location" jdbcType="VARCHAR"/>
+            <result property="userAgent" column="user_agent" jdbcType="VARCHAR"/>
+            <result property="browser" column="browser" jdbcType="VARCHAR"/>
+            <result property="browserVersion" column="browser_version" jdbcType="VARCHAR"/>
+            <result property="os" column="os" jdbcType="VARCHAR"/>
+            <result property="device" column="device" jdbcType="VARCHAR"/>
+            <result property="referer" column="referer" jdbcType="VARCHAR"/>
+            <result property="requestUrl" column="request_url" jdbcType="VARCHAR"/>
+            <result property="visitTime" column="visit_time" jdbcType="TIMESTAMP"/>
+            <result property="stayTime" column="stay_time" jdbcType="INTEGER"/>
+            <result property="isMobile" column="is_mobile" jdbcType="TINYINT"/>
+            <result property="isSpider" column="is_spider" jdbcType="TINYINT"/>
+            <result property="spiderName" column="spider_name" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="isDelete" column="is_delete" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,article_id,visitor_ip,
+        visitor_location,user_agent,browser,
+        browser_version,os,device,
+        referer,request_url,visit_time,
+        stay_time,is_mobile,is_spider,
+        spider_name,create_time,update_time,
+        is_delete
+    </sql>
+</mapper>

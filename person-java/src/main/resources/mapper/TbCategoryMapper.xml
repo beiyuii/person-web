@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pw.pj.mapper.TbCategoryMapper">
+
+    <resultMap id="BaseResultMap" type="pw.pj.POJO.DO.TbCategory">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="slug" column="slug" jdbcType="VARCHAR"/>
+            <result property="description" column="description" jdbcType="VARCHAR"/>
+            <result property="icon" column="icon" jdbcType="VARCHAR"/>
+            <result property="coverImage" column="cover_image" jdbcType="VARCHAR"/>
+            <result property="parentId" column="parent_id" jdbcType="BIGINT"/>
+            <result property="level" column="level" jdbcType="TINYINT"/>
+            <result property="path" column="path" jdbcType="VARCHAR"/>
+            <result property="sortOrder" column="sort_order" jdbcType="INTEGER"/>
+            <result property="articleCount" column="article_count" jdbcType="INTEGER"/>
+            <result property="status" column="status" jdbcType="TINYINT"/>
+            <result property="seoTitle" column="seo_title" jdbcType="VARCHAR"/>
+            <result property="seoDescription" column="seo_description" jdbcType="VARCHAR"/>
+            <result property="seoKeywords" column="seo_keywords" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="isDelete" column="is_delete" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,name,slug,
+        description,icon,cover_image,
+        parent_id,level,path,
+        sort_order,article_count,status,
+        seo_title,seo_description,seo_keywords,
+        create_time,update_time,is_delete
+    </sql>
+</mapper>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pw.pj.mapper.TbSystemConfigMapper">
+
+    <resultMap id="BaseResultMap" type="pw.pj.POJO.DO.TbSystemConfig">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="configGroup" column="config_group" jdbcType="VARCHAR"/>
+            <result property="configKey" column="config_key" jdbcType="VARCHAR"/>
+            <result property="configValue" column="config_value" jdbcType="VARCHAR"/>
+            <result property="configName" column="config_name" jdbcType="VARCHAR"/>
+            <result property="configDesc" column="config_desc" jdbcType="VARCHAR"/>
+            <result property="configType" column="config_type" jdbcType="TINYINT"/>
+            <result property="isSystem" column="is_system" jdbcType="TINYINT"/>
+            <result property="sortOrder" column="sort_order" jdbcType="INTEGER"/>
+            <result property="status" column="status" jdbcType="TINYINT"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="isDelete" column="is_delete" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,config_group,config_key,
+        config_value,config_name,config_desc,
+        config_type,is_system,sort_order,
+        status,create_time,update_time,
+        is_delete
+    </sql>
+</mapper>

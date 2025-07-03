@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pw.pj.mapper.TbArticleMapper">
+
+    <resultMap id="BaseResultMap" type="pw.pj.POJO/DO.TbArticle">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="title" column="title" jdbcType="VARCHAR"/>
+            <result property="slug" column="slug" jdbcType="VARCHAR"/>
+            <result property="summary" column="summary" jdbcType="VARCHAR"/>
+            <result property="content" column="content" jdbcType="VARCHAR"/>
+            <result property="contentHtml" column="content_html" jdbcType="VARCHAR"/>
+            <result property="coverImage" column="cover_image" jdbcType="VARCHAR"/>
+            <result property="authorId" column="author_id" jdbcType="BIGINT"/>
+            <result property="categoryId" column="category_id" jdbcType="BIGINT"/>
+            <result property="status" column="status" jdbcType="TINYINT"/>
+            <result property="isTop" column="is_top" jdbcType="TINYINT"/>
+            <result property="isRecommend" column="is_recommend" jdbcType="TINYINT"/>
+            <result property="isOriginal" column="is_original" jdbcType="TINYINT"/>
+            <result property="password" column="password" jdbcType="VARCHAR"/>
+            <result property="viewCount" column="view_count" jdbcType="INTEGER"/>
+            <result property="likeCount" column="like_count" jdbcType="INTEGER"/>
+            <result property="commentCount" column="comment_count" jdbcType="INTEGER"/>
+            <result property="collectCount" column="collect_count" jdbcType="INTEGER"/>
+            <result property="wordCount" column="word_count" jdbcType="INTEGER"/>
+            <result property="readingTime" column="reading_time" jdbcType="INTEGER"/>
+            <result property="publishedTime" column="published_time" jdbcType="TIMESTAMP"/>
+            <result property="seoTitle" column="seo_title" jdbcType="VARCHAR"/>
+            <result property="seoDescription" column="seo_description" jdbcType="VARCHAR"/>
+            <result property="seoKeywords" column="seo_keywords" jdbcType="VARCHAR"/>
+            <result property="originalUrl" column="original_url" jdbcType="VARCHAR"/>
+            <result property="editorType" column="editor_type" jdbcType="TINYINT"/>
+            <result property="allowComment" column="allow_comment" jdbcType="TINYINT"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="isDelete" column="is_delete" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,title,slug,
+        summary,content,content_html,
+        cover_image,author_id,category_id,
+        status,is_top,is_recommend,
+        is_original,password,view_count,
+        like_count,comment_count,collect_count,
+        word_count,reading_time,published_time,
+        seo_title,seo_description,seo_keywords,
+        original_url,editor_type,allow_comment,
+        create_time,update_time,is_delete
+    </sql>
+</mapper>
