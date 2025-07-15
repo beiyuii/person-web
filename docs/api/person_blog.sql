@@ -235,7 +235,7 @@ CREATE TABLE tb_file (
     mime_type VARCHAR(100) COMMENT 'MIME类型',
     upload_user_id BIGINT COMMENT '上传用户ID',
     upload_ip VARCHAR(50) COMMENT '上传IP',
-    storage_type TINYINT DEFAULT 1 COMMENT '存储类型：1-本地，2-阿里云OSS，3-七牛云',
+    storage_type TINYINT DEFAULT 1 COMMENT '存储类型：1-本地，2-阿里云OSS，3-七牛云，4-双存储',
     bucket_name VARCHAR(100) COMMENT '存储桶名称',
     is_public TINYINT DEFAULT 1 COMMENT '是否公开：0-私有，1-公开',
     download_count INT DEFAULT 0 COMMENT '下载次数',

@@ -10,9 +10,10 @@ import lombok.Data;
 
 /**
  * 文件表
+ * 
  * @TableName tb_file
  */
-@TableName(value ="tb_file")
+@TableName(value = "tb_file")
 @Data
 public class TbFile implements Serializable {
     /**
