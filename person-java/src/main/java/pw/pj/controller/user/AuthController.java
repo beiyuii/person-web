@@ -20,6 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.Map;
+import pw.pj.common.utils.CaptchaUtils;
 
 /**
  * 用户认证控制器
@@ -41,8 +42,8 @@ public class AuthController {
     @Autowired
     private JwtTokenUtil jwtTokenUtil;
 
-    @Autowired
-    private pw.pj.common.utils.CaptchaUtils captchaUtils;
+    // @Autowired
+    // private pw.pj.common.utils.CaptchaUtils captchaUtils;
 
     @Autowired
     private RedisUtils redisUtils;
@@ -369,7 +370,7 @@ public class AuthController {
             log.debug("生成验证码请求");
 
             // 使用验证码工具生成图形验证码
-            pw.pj.common.utils.CaptchaUtils.CaptchaResult captchaResult = captchaUtils.generateImageCaptcha();
+            pw.pj.common.utils.CaptchaUtils.CaptchaResult captchaResult = CaptchaUtils.generateImageCaptcha();
 
             // 生成UUID作为验证码标识
             String uuid = StringUtils.generateUuid();

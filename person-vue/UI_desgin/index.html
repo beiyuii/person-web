@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人博客 - 创造数字世界的无限可能</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">DevBlog</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">首页</a>
+                <a href="#about" class="nav-link">关于</a>
+                <a href="#skills" class="nav-link">技能</a>
+                <a href="#works" class="nav-link">作品</a>
+                <a href="login.html" class="nav-link nav-cta">登录</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero区域 -->
+    <section id="home" class="hero-section">
+        <div class="particles-container" id="particles-container"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="gradient-text" id="typing-text"></span>
+                <span class="cursor">|</span>
+            </h1>
+            <p class="hero-subtitle">全栈开发者 · 创意设计师 · 技术探索者</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="scrollToSection('works')">
+                    <span>查看作品</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <button class="btn btn-secondary" onclick="window.location.href='login.html'">
+                    <span>开始体验</span>
+                </button>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- 技能区域 -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="section-title">技术栈</h2>
+            <div class="skills-grid">
+                <div class="skill-card" data-skill="frontend">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Frontend</h3>
+                    <p>Vue3, React, TypeScript</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" data-progress="95"></div>
+                    </div>
+                </div>
+                <div class="skill-card" data-skill="backend">
+                    <div class="skill-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Backend</h3>
+                    <p>Spring Boot, Node.js</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" data-progress="90"></div>
+                    </div>
+                </div>
+                <div class="skill-card" data-skill="design">
+                    <div class="skill-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Design</h3>
+                    <p>UI/UX, 3D Modeling</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" data-progress="85"></div>
+                    </div>
+                </div>
+                <div class="skill-card" data-skill="devops">
+                    <div class="skill-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>DevOps</h3>
+                    <p>Docker, AWS, CI/CD</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" data-progress="80"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作品区域 -->
+    <section id="works" class="works-section">
+        <div class="container">
+            <h2 class="section-title">精选作品</h2>
+            <div class="works-masonry" id="works-masonry">
+                <div class="work-item work-large" data-work="1">
+                    <div class="work-image">
+                        <img src="/placeholder.svg?height=400&width=600" alt="智能博客系统">
+                        <div class="work-overlay">
+                            <h3>智能博客系统</h3>
+                            <p>基于现代化技术栈的博客平台</p>
+                            <div class="work-tags">
+                                <span class="tag">HTML5</span>
+                                <span class="tag">CSS3</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Spring Boot</span>
+                            </div>
+                            <button class="work-btn" onclick="openWorkDetail(1)">
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-item work-medium" data-work="2">
+                    <div class="work-image">
+                        <img src="/placeholder.svg?height=300&width=400" alt="3D作品展示">
+                        <div class="work-overlay">
+                            <h3>3D作品展示</h3>
+                            <p>交互式3D模型展示平台</p>
+                            <div class="work-tags">
+                                <span class="tag">Three.js</span>
+                                <span class="tag">WebGL</span>
+                                <span class="tag">Blender</span>
+                            </div>
+                            <button class="work-btn" onclick="openWorkDetail(2)">
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-item work-tall" data-work="3">
+                    <div class="work-image">
+                        <img src="/placeholder.svg?height=500&width=400" alt="移动端应用">
+                        <div class="work-overlay">
+                            <h3>移动端应用</h3>
+                            <p>跨平台移动应用开发</p>
+                            <div class="work-tags">
+                                <span class="tag">React Native</span>
+                                <span class="tag">Flutter</span>
+                            </div>
+                            <button class="work-btn" onclick="openWorkDetail(3)">
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-item work-medium" data-work="4">
+                    <div class="work-image">
+                        <img src="/placeholder.svg?height=300&width=400" alt="数据可视化">
+                        <div class="work-overlay">
+                            <h3>数据可视化</h3>
+                            <p>企业级数据分析平台</p>
+                            <div class="work-tags">
+                                <span class="tag">D3.js</span>
+                                <span class="tag">Chart.js</span>
+                                <span class="tag">Python</span>
+                            </div>
+                            <button class="work-btn" onclick="openWorkDetail(4)">
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于区域 -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">关于我</h2>
+                    <div class="typing-container">
+                        <p id="about-typing-text"></p>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="50">0</div>
+                            <div class="stat-label">项目经验</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="20">0</div>
+                            <div class="stat-label">技术栈</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="5">0</div>
+                            <div class="stat-label">开发年限</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="99">0</div>
+                            <div class="stat-label">客户满意度</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-avatar">
+                    <div class="avatar-container">
+                        <img src="/placeholder.svg?height=300&width=300" alt="Avatar">
+                        <div class="avatar-glow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>联系方式</h3>
+                    <p><i class="fas fa-envelope"></i> contact@devblog.com</p>
+                    <p><i class="fas fa-phone"></i> +86 138-0000-0000</p>
+                </div>
+                <div class="footer-section">
+                    <h3>社交媒体</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>快速链接</h3>
+                    <a href="#home">首页</a>
+                    <a href="#about">关于</a>
+                    <a href="#skills">技能</a>
+                    <a href="#works">作品</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DevBlog. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 作品详情模态框 -->
+    <div id="work-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeWorkModal()">&times;</span>
+            <div id="modal-body">
+                <!-- 动态内容 -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/particles.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

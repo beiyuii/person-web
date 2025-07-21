@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录 - DevBlog</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+
+<body>
+    <div class="auth-page">
+        <!-- 背景装饰 -->
+        <div class="bg-decoration">
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+            <div class="circle circle-3"></div>
+        </div>
+
+        <!-- 返回首页按钮 -->
+        <a href="index.html" class="back-home">
+            <i class="fas fa-arrow-left"></i>
+            <span>返回首页</span>
+        </a>
+
+        <!-- 登录表单容器 -->
+        <div class="auth-container" id="auth-container">
+            <div class="form-header">
+                <h1 class="form-title" id="form-title">欢迎回来</h1>
+                <p class="form-subtitle" id="form-subtitle">登录您的账户继续精彩旅程</p>
+            </div>
+
+            <!-- 登录表单 -->
+            <form class="auth-form" id="auth-form">
+                <div class="form-group">
+                    <div class="input-container">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="username" name="username" placeholder="用户名或邮箱" required
+                            class="form-input">
+                        <div class="input-line"></div>
+                    </div>
+                    <span class="error-message" id="username-error"></span>
+                </div>
+
+                <!-- 邮箱字段（注册时显示） -->
+                <div class="form-group" id="email-group" style="display: none;">
+                    <div class="input-container">
+                        <i class="fas fa-envelope input-icon"></i>
+                        <input type="email" id="email" name="email" placeholder="邮箱地址" class="form-input">
+                        <div class="input-line"></div>
+                    </div>
+                    <span class="error-message" id="email-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-container">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" id="password" name="password" placeholder="密码" required
+                            class="form-input">
+                        <button type="button" class="password-toggle" onclick="togglePassword('password')">
+                            <i class="fas fa-eye" id="password-eye"></i>
+                        </button>
+                        <div class="input-line"></div>
+                    </div>
+                    <span class="error-message" id="password-error"></span>
+                </div>
+
+                <!-- 确认密码字段（注册时显示） -->
+                <div class="form-group" id="confirm-password-group" style="display: none;">
+                    <div class="input-container">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" id="confirm-password" name="confirm-password" placeholder="确认密码"
+                            class="form-input">
+                        <button type="button" class="password-toggle" onclick="togglePassword('confirm-password')">
+                            <i class="fas fa-eye" id="confirm-password-eye"></i>
+                        </button>
+                        <div class="input-line"></div>
+                    </div>
+                    <span class="error-message" id="confirm-password-error"></span>
+                </div>
+
+                <!-- 登录选项 -->
+                <div class="form-options" id="login-options">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="remember-me">
+                        <span class="checkmark"></span>
+                        记住我
+                    </label>
+                    <button type="button" class="forgot-password" onclick="handleForgotPassword()">
+                        忘记密码？
+                    </button>
+                </div>
+
+                <!-- 提交按钮 -->
+                <button type="submit" class="submit-btn" id="submit-btn">
+                    <span class="btn-text" id="btn-text">登录</span>
+                    <i class="fas fa-arrow-right btn-icon"></i>
+                    <div class="btn-loading" id="btn-loading">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </div>
+                </button>
+            </form>
+
+            <!-- 切换登录/注册 -->
+            <div class="form-footer">
+                <span class="footer-text" id="footer-text">还没有账户？</span>
+                <button type="button" class="switch-btn" id="switch-btn" onclick="toggleAuthMode()">
+                    立即注册
+                </button>
+            </div>
+
+            <!-- 社交登录 -->
+            <div class="social-login">
+                <div class="divider">
+                    <span>或者</span>
+                </div>
+                <div class="social-buttons">
+                    <button class="social-btn github-btn" onclick="handleSocialLogin('github')">
+                        <i class="fab fa-github social-icon"></i>
+                        <span>GitHub</span>
+                    </button>
+                    <button class="social-btn google-btn" onclick="handleSocialLogin('google')">
+                        <i class="fab fa-google social-icon"></i>
+                        <span>Google</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 消息提示 -->
+    <div id="message-container" class="message-container"></div>
+
+    <script src="js/auth.js"></script>
+</body>
+
+</html>
